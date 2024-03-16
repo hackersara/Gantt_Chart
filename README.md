@@ -1,4 +1,4 @@
-<H1> GANTT CHART MAKER </H1>
+<H1> GANTT CHART GENERATOR </H1>
 
 <h2>Description</h2>
 <p>This project aims to create a Gantt chart dynamically based on user input. It includes features such as data input through a PHP form, Gantt chart generation, and dynamic rendering for an interactive user experience.</p>
@@ -29,18 +29,21 @@ $ php -S localhost:8000
   <li>Fill out the task details in the provided PHP form.</li> 
   <br>
   
-  ![image](https://github.com/Shatakshi1206/Gantt_chart-PHP-/assets/153349188/2fa758b6-3a4d-45a4-ba26-6d315c7a31f6)
+  ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/dd815143-f269-4fb4-b51a-5a57d01bdce0)
+)
   
   <li>Optionally, add dependencies on other tasks if needed.</li>
   <li>Click the "Add Task" button to create the Gantt chart.</li>
   <br>
   
-  ![image](https://github.com/Shatakshi1206/Gantt_chart-PHP-/assets/153349188/7cfd6599-80ec-4688-9f21-6e630a6c96c0)
+  ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/4e9c6d52-5ed9-4f30-838b-735eb34c2f97)
+)
   
   <li>The Gantt chart will be dynamically rendered based on your input, displaying each task as a horizontal bar from its start to end date.</li>
   <br>
 
-  ![image](https://github.com/Shatakshi1206/Gantt_chart-PHP-/assets/153349188/378452d3-6174-445a-ab8a-51f820bf197c)
+  ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/bdc534f9-484d-47b9-b2da-8825b500cd0b)
+)
 
   <li>You can also save the gantt chart as a SVG on your local system </li>
 </ol>
@@ -59,6 +62,7 @@ We welcome contributions from the community to improve this project. Here's how 
 
 <H2> DEMO SAMPLE </H2>
 
-![image](https://github.com/Shatakshi1206/Gantt_chart-PHP-/assets/153349188/fa0f8a21-50a2-4c88-8b95-277670470dca)
+![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/2bbefa50-4c3e-42cb-8342-33dd272402f6)
+)
 
 
