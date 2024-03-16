@@ -29,22 +29,21 @@ $ php -S localhost:8000
   <li>Fill out the task details in the provided PHP form.</li> 
   <br>
   
-  ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/dd815143-f269-4fb4-b51a-5a57d01bdce0)
-)
+  ![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/dd815143-f269-4fb4-b51a-5a57d01bdce0)
+
   
   <li>Optionally, add dependencies on other tasks if needed.</li>
   <li>Click the "Add Task" button to create the Gantt chart.</li>
   <br>
   
-  ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/4e9c6d52-5ed9-4f30-838b-735eb34c2f97)
-)
+  ![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/4e9c6d52-5ed9-4f30-838b-735eb34c2f97)
+
   
   <li>The Gantt chart will be dynamically rendered based on your input, displaying each task as a horizontal bar from its start to end date.</li>
   <br>
   
 ![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/620681fd-a406-481e-a2b7-63e8abec9dc5)
 
-)
 
   <li>You can also save the gantt chart as a SVG on your local system </li>
 </ol>
@@ -64,6 +63,5 @@ We welcome contributions from the community to improve this project. Here's how 
 <H2> DEMO SAMPLE </H2>
 
 ![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/2bbefa50-4c3e-42cb-8342-33dd272402f6)
-)
 
 
