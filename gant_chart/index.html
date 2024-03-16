@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gantt Chart Generator</title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+        #container {
+            min-width: 600px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img id="logo" src="C:\Users\Saransh Chaudhary\Desktop\gant_chart\logo.png" alt="logo">
+</header>
+<hr>
+    <h1 >Gantt Chart <span class="special-color">Generator</span></h1>
+    <h2 id="subtitle">To get started, edit the chart below</h2>
+    <div id="container"></div>
+
+ <!-- Update title and subtitle -->
+ <div id="bigbox">
+ <div id="update-title-wrapper">
+    <div class="form-group">
+        <label for="chart-title">Title</label>
+        <input
+            type="text"
+            class="form-control"
+            id="chart-title"
+            placeholder="Enter chart title"
+        />
+    </div>
+    <div class="form-group">
+        <label for="chart-subtitle">Subtitle</label>
+        <input
+            type="text"
+            class="form-control"
+            id="chart-subtitle"
+            placeholder="Enter chart subtitle"
+        />
+    </div>
+</div>
+
+    <div id="buttonGroup" class="button-row">
+        <a href="#" id="btnShowDialog">
+            <i class="fa fa-plus"></i>
+            Add task
+        </a>
+        <a href="#" id="btnRemoveSelected" disabled="disabled">
+            <i class="fa fa-remove"></i>
+            Remove task
+        </a>
+    </div>
+</div>
+
+    <div id="addTaskDialog" class="hidden overlay">
+        <div class="popup">
+            <h3>Add task</h3>
+
+            <label>Task name <input id="inputName" type="text" /></label>
+
+            <label
+                >Start Date
+                <input id="startDate" type="date" />
+            </label>
+
+            <label
+                >End Date
+                <input id="endDate" type="date" />
+            </label>
+
+            <label
+                >Dependency
+                <select id="selectDependency">
+                    <option value="">None</option>
+                    <!-- Options will be filled by JavaScript -->
+                </select>
+            </label>
+
+            <div class="button-row">
+                <button id="btnAddTask">Add</button>
+                <button id="btnCancelAddTask">Cancel</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- PHP Form for data input -->
+    <form method="post" id="dataForm">
+        <input type="hidden" id="taskData" name="taskData" value="" />
+    </form>
+    
+    <div id="update-rows-wrapper"></div>
+    <br />
+    <footer> 
+        Made by Saransh Chaudhary
+        <a href="#" class="mail">saranshchaudhary1130@gmail.com</a>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/gantt/highcharts-gantt.js"></script>
+<script src="https://code.highcharts.com/gantt/modules/draggable-points.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize data array to store task information
+        var tasks = [];
+
+        // Function to add task to the chart
+        function addTask(name, start, end, dependency) {
+            var task = {
+                name: name,
+                start: start,
+                end: end,
+                dependency: dependency
+            };
+            tasks.push(task);
+            updateChart();
+            populateDependencyDropdown();
+        }
+
+        // Function to update chart with tasks
+        function updateChart() {
+            Highcharts.ganttChart('container', {
+                title: {
+                    text: $('#chart-title').val()
+                },
+                subtitle: {
+                    text: $('#chart-subtitle').val()
+                },
+                series: [{
+                    name: 'Tasks',
+                    data: tasks.map(function(task, index) {
+                        return {
+                            name: task.name,
+                            start: new Date(task.start).getTime(),
+                            end: new Date(task.end).getTime(),
+                            dependency: task.dependency !== '' ? 'task_' + task.dependency : ''
+                        };
+                    }),
+                    type: 'gantt',
+                    connectEnds: true // Enable arrows between dependent tasks
+                }],
+                plotOptions: {
+                    series: {
+                        marker: {
+                            symbol: 'arrow'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Show add task dialog
+        $('#btnShowDialog').click(function() {
+            $('#addTaskDialog').removeClass('hidden');
+        });
+
+        // Add task button click event
+        $('#btnAddTask').click(function() {
+            var name = $('#inputName').val();
+            var start = $('#startDate').val();
+            var end = $('#endDate').val();
+            var dependency = $('#selectDependency').val();
+
+            addTask(name, start, end, dependency);
+            $('#addTaskDialog').addClass('hidden');
+            $('#inputName').val('');
+            $('#startDate').val('');
+            $('#endDate').val('');
+            $('#selectDependency').val('');
+        });
+
+        // Cancel add task button click event
+        $('#btnCancelAddTask').click(function() {
+            $('#addTaskDialog').addClass('hidden');
+            $('#inputName').val('');
+            $('#startDate').val('');
+            $('#endDate').val('');
+            $('#selectDependency').val('');
+        });
+
+        // Form submission to save data
+        $('#dataForm').submit(function(event) {
+            event.preventDefault();
+            $('#taskData').val(JSON.stringify(tasks));
+            $(this).unbind('submit').submit();
+        });
+
+        // Function to populate task dependencies dropdown
+        function populateDependencyDropdown() {
+            $('#selectDependency').empty().append('<option value="">None</option>');
+            for (var i = 0; i < tasks.length; i++) {
+                $('#selectDependency').append('<option value="' + i + '">' + tasks[i].name + '</option>');
+            }
+        }
+
+        // Call the function to populate task dependencies dropdown
+        populateDependencyDropdown();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Main container styles */
+body {
+  background: black;
+  background-size: cover;
+  background-position: center;
+}
+
+#logo {
+  width: 153px;
+  margin-left: 45%;
+}
+
+/* Heading styles */
+h1 ,h2{
+  text-align: center;
+  margin: 0px !important;
+}
+
+h1 {
+  font-size: 70px;
+  color: cyan;
+}
+
+h1.special-color {
+ color: white ;
+}
+
+h2 {
+  font-size: 50px;
+  color: white;
+}
+
+#bigbox {
+  border: 1px solid rgb(57, 153, 153);
+  background-color: rgba(0, 255, 255, 0.15);
+  padding:1%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/*title and subtitle  */
+#update-title-wrapper {
+  margin:0 auto !important;
+  font-size: 30px;
+  color: #d3e8ff9d;
+  padding-left: 28%;
+  position: sticky;
+}
+.form-control {
+  color: white;
+  margin: 0 auto !important;
+  font-size: 2.0rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(rgba(49, 41, 73, 0.647));
+  border: currentColor 0.030em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsla(243, 28%, 29%, 0.629), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(grey), 0 0 0.5em 0 var(grey);
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* neon button */
+#buttonGroup  {
+  padding-left: 40% !important;
+  padding: 3% 3% 3% 3%;
+  margin: 1%;  
+}
+
+:root {
+  --clr-neon: hsl(175, 70%, 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+#btnShowDialog , #btnRemoveSelected {
+  margin: 0 auto !important;
+  font-size: 1.2rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon); /* Use the custom neon color variable */
+  border: currentColor 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.507), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+}
+
+#btnShowDialog::before , #btnRemoveSelected::before {
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1.2em);
+}
+
+/* gantt chart */
+#taskData {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Popup styles */
+#addTaskDialog {
+  padding-left: 40% !important;
+  color: white;
+}
+.popup {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(32, 32, 32); /* Initial box shadow color */
+  animation: glow 5.5s infinite alternate; /* Animation for glowing effect */
+}
+
+.popup h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.popup input[type="text"],
+.popup input[type="date"],
+.popup select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 30px #e600ff51; /* Initial box shadow color */
+  }
+  100% {
+    box-shadow: 0 0 50px #012042; /* Final box shadow color */
+  }
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+  color: white;
+}
+
+footer {
+  color: white;
+  font-size: 20px;
+}
+footer .mail {
+  float:right;
+  color: white;
+}
+
+
