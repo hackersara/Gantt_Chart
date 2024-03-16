@@ -42,7 +42,8 @@ $ php -S localhost:8000
   <li>The Gantt chart will be dynamically rendered based on your input, displaying each task as a horizontal bar from its start to end date.</li>
   <br>
   
-![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/620681fd-a406-481e-a2b7-63e8abec9dc5)
+![Screenshot 2024-03-16 164303](https://github.com/hackersara/Gantt_Chart/assets/102319329/b7bda7cd-3eb8-4970-8e84-62f8579ecb49)
+
 
 
   <li>You can also save the gantt chart as a SVG on your local system </li>
@@ -62,6 +63,6 @@ We welcome contributions from the community to improve this project. Here's how 
 
 <H2> DEMO SAMPLE </H2>
 
-![image](![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/2bbefa50-4c3e-42cb-8342-33dd272402f6)
+![image](https://github.com/hackersara/Gantt_Chart/assets/102319329/2bbefa50-4c3e-42cb-8342-33dd272402f6)
 
 
